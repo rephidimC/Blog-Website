@@ -1,0 +1,21 @@
+<%- include("partials/header"); -%>
+
+<h1><%=Title%></h1>
+
+<p><%=Body%></p>
+
+<br>
+  <% DemblogPost.forEach(function(post) { %>
+    <h1><%=post.name%></h1>
+    <p class="inline-block">
+      <%=_.truncate(post.body, {"length": 100, "separator": /,? +/})%>
+      <a href="/posts/<%=post._id%>">
+        Read More
+      </a>
+    </p>
+
+  <% }); %>
+
+
+
+<%- include("partials/footer"); -%>
